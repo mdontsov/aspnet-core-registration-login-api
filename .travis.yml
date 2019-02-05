@@ -1,8 +1,8 @@
-language: csharp
 dist: xenial
+language: csharp
+services:
+ - docker
 mono: none
 dotnet: 2.2
 script:
  - dotnet restore
-services:
- - docker
