@@ -8,7 +8,23 @@ namespace WebApi
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .CreateLogger();
+            
+            try {
+                Log.Information("Starting web host");
+                BuildWebHost(args).Run();
+                return 0;
+            } catch () {
+                Log.Fatal(ex, "Host terminated unexpectedly");
+                return 1;
+            } finally {
+                Log.CloseAndFlush();
+            }
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
