@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Serilog;
+using Microsoft.Extensions.Configuration;
 
 namespace WebApi
 {
