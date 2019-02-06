@@ -5,6 +5,6 @@ dotnet: 2.2
 services:
  - docker
 script:
- - docker build -t webapi .
+ - docker build -t mdontsov/webapi .
  - docker login -u=mdontsov -p=123456789
  - docker push mdontsov/webapi
