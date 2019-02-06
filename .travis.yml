@@ -2,3 +2,6 @@ dist: xenial
 language: csharp
 services:
  - docker
+before_install:
+ - docker build -t webapi .
+ 
