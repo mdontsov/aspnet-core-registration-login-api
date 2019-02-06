@@ -18,8 +18,6 @@ namespace WebApi
     {
         public Startup(IConfiguration configuration)
         {
-            // Init Serilog configuration
-            Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
             Configuration = configuration;
         }
 
@@ -78,7 +76,7 @@ namespace WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // global cors policy
             app.UseCors(x => x
@@ -87,9 +85,6 @@ namespace WebApi
                 .AllowAnyHeader());
 
             app.UseAuthentication();
-            
-            // logging
-            loggerFactory.AddSerilog();
             app.UseMvc();
         }
     }
