@@ -13,7 +13,6 @@ namespace WebApi
         {
             Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
-            .MinimumLevel.Override("Microsoft")
             .Enrich.FromLogContext()
             .WriteTo.Console()
             .CreateLogger();
