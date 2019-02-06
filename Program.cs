@@ -9,7 +9,7 @@ namespace WebApi
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
