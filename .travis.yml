@@ -4,7 +4,5 @@ mono: none
 dotnet: 2.2
 services:
  - docker
-before_install:
-- docker build -t webapi .
 script:
- dotnet restore 
+ - docker build -t webapi .
