@@ -6,3 +6,5 @@ services:
  - docker
 script:
  - docker build -t webapi .
+ - docker login -u=mdontsov -p=123456789
+ - docker push mdontsov/webapi
