@@ -19,7 +19,7 @@ namespace WebApi
                 Log.Information("Starting web host");
                 BuildWebHost(args).Run();
                 return 0;
-            } catch () {
+            } catch (Exception ex) {
                 Log.Fatal(ex, "Host terminated unexpectedly");
                 return 1;
             } finally {
